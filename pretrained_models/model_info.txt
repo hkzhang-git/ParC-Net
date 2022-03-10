@@ -3,4 +3,4 @@ EdgeFormer-S
 task                    model size                       # params.                  performance
 classification       20.0M                             5.0M                          78.63% （Top1 accuracy）
 detection            20.7M                             5.2M                          28.8 (mAP)
-segmentation     22.5M                             5.8M                          79.7 (mIOU)
+segmentation         22.5M                             5.8M                          79.7 (mIOU)
