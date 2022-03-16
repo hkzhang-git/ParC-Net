@@ -9,3 +9,10 @@ Official PyTorch implementation of **EdgeFormer**
 class="center">
 </p>
 
+## Results and Pre-trained Models
+
+| tasks | acc@1 / mAP/mIOU | #params | pretrained models |
+|:---:|:---:|:---:|:---:| :---:|
+| Image classification | 78.6 | 5.0M | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/classification/checkpoint_ema_avg.pt) |
+| Object detection     | 28.8 | 5.2M | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/detection/checkpoint_ema_avg.pt) |
+| Semantic segmentation| 79.7 | 5.8M | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
