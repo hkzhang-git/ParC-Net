@@ -44,7 +44,12 @@ class="center">
 | Segmentation   | 79.7 (mIOU)     | 5.8 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
 
 ### Inference speed
+We deploy the proposed EdgeFormer on a widely used low power chip Rockchip RK3288 and compare it with baseline. We use ONNX [1] and MNN to port these models to RK3288 and time each model for 100 iterations to measure the average inference speed.
 
+| Models | #params (M) | Madds (M)| inference speed (ms) | Top1 acc |
+|:---:|:---:|:---:|:---:|:---:|
+| MobileViT-S | 5.6 | 2010 |  457| 78.4 |
+| EdgeFormer-S | 5.0 (-11%)| 1740 (-13%) |  353 (+23%)| 78.6 (+0.2%) |
 
 ## Installation
 We implement EdgeFomer with PyTorch-1.9.0, CUDA=11.1. 
