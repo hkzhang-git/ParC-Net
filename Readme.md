@@ -43,6 +43,9 @@ class="center">
 | Detection      | 28.8 (mAP)      | 5.2 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/detection/checkpoint_ema_avg.pt) |
 | Segmentation   | 79.7 (mIOU)     | 5.8 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
 
+### Inference speed
+
+
 ## Installation
 We implement EdgeFomer with PyTorch-1.9.0, CUDA=11.1. 
 ### PiP
@@ -92,7 +95,8 @@ cd EdgeFormer-main
 CUDA_VISIBLE_DEVICES=0 python eval_seg.py --common.config-file ./config/detection/edgeformer/deeplabv3_edgeformer_s.yaml --model.segmentation.pretrained ./pretrained_models/segmentation/checkpoint_ema_avg.pt --evaluation.segmentation.mode validation_set --evaluation.segmentation.resize-input-images
 ``` 
 
-
+## Acknowledgement
+We thanks authors of Mobilevit for sharing their code. We implement EdgeFormer based on their [source code](https://github.com/apple/ml-cvnets). If you find this code useful, please cite our paper and [Mobilevit](https://arxiv.org/abs/2110.02178?context=cs.LG)
 
 
 
