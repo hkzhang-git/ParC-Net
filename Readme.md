@@ -21,8 +21,18 @@ circular convolution (GCC) with position embeddings, a light-weight convolution 
 speed. For classification on ImageNet-1k, EdgeFormer achieves 78.6% top-1 accuracy with about 5.0 million parameters, saving 11% parameters and 13% computational cost but gaining 0.2% higher accuracy and 23% faster inference speed (on ARM based Rockchip RK3288) compared with MobileViT. 
 
 ## EdgeFormer block
+<p align="center">
+<img src="https://s1.ax1x.com/2022/03/16/qpaZwQ.png" width=60% height=60% 
+class="center">
+</p>
 
 ## Global circular convolution
+
+<p align="center">
+<img src="https://s1.ax1x.com/2022/03/16/qpaeoj.png" width=60% height=60% 
+class="center">
+</p>
+
 
 ## Experimental results
 
@@ -32,6 +42,13 @@ speed. For classification on ImageNet-1k, EdgeFormer achieves 78.6% top-1 accura
 | Classification | 78.6 (Top1 acc) | 5.0 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/classification/checkpoint_ema_avg.pt) |
 | Detection      | 28.8 (mAP)      | 5.2 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/detection/checkpoint_ema_avg.pt) |
 | Segmentation   | 79.7 (mIOU)     | 5.8 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
+
+## Installation
+### PiP
+The environment can be build in the local python environment using the below command:
+### Dokcer
+A docker image containing environment will be provided soon. 
+
 
 
 
