@@ -10,7 +10,7 @@ class="center">
 </p>
 
 <p align="center">
-<img src="https://s1.ax1x.com/2022/03/16/qpE27Q.png" width=100% height=100% 
+<img src="https://s1.ax1x.com/2022/03/16/qpE27Q.png" width=60% height=60% 
 class="center">
 </p>
 
