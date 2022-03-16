@@ -11,12 +11,9 @@ class="center">
 
 ## Results and Pre-trained Models
 
-| tasks | acc@1 / mAP/mIOU | #params | pretrained models |
-|:---:|:---:|:---:|:---:| :---:|
-| Image classification | 78.6 | 5.0M | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/classification/checkpoint_ema_avg.pt) |
-| Object detection     | 28.8 | 5.2M | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/detection/checkpoint_ema_avg.pt) |
-| Semantic segmentation| 79.7 | 5.8M | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
-
+### EdgeFormer-S
 | Tasks | performance | #params | pretrained models |
 |:---:|:---:|:---:|:---:|
 | Classification | 78.6 (Top1 acc) | 5.0 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/classification/checkpoint_ema_avg.pt) |
+| Detection      | 28.8 (mAP)      | 5.2 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/detection/checkpoint_ema_avg.pt) |
+| Segmentation   | 79.7 (mIOU)     | 5.8 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
