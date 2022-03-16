@@ -44,10 +44,19 @@ class="center">
 | Segmentation   | 79.7 (mIOU)     | 5.8 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
 
 ## Installation
+We implement EdgeFomer with PyTorch-1.9.0, CUDA=11.1. 
 ### PiP
 The environment can be build in the local python environment using the below command:
+``` 
+pip install -r requirements.txt
+```
 ### Dokcer
 A docker image containing environment will be provided soon. 
+
+## Training
+### Classifiction
+
+
 
 
 
