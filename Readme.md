@@ -101,7 +101,7 @@ CUDA_VISIBLE_DEVICES=0 python eval_seg.py --common.config-file ./config/detectio
 ``` 
 
 ## Acknowledgement
-We thanks authors of Mobilevit for sharing their code. We implement EdgeFormer based on their [source code](https://github.com/apple/ml-cvnets). If you find this code useful, please cite our paper and [Mobilevit](https://arxiv.org/abs/2110.02178?context=cs.LG)
+We thanks authors of Mobilevit for sharing their code. We implement EdgeFormer based on their [source code](https://github.com/apple/ml-cvnets). If you find this code is helpful in your research, please consider citing our paper and [Mobilevit](https://arxiv.org/abs/2110.02178?context=cs.LG)
 
 
 
