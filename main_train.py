@@ -1,7 +1,3 @@
-#
-# For licensing see accompanying LICENSE file.
-# Copyright (C) 2020 Apple Inc. All Rights Reserved.
-#
 import warnings
 warnings.filterwarnings('ignore')
 import multiprocessing
