@@ -1,4 +1,5 @@
 # EdgeFormer: Improving Light-weight ConvNets by Learning from Vision Transformers
+[English version](https://github.com/hkzhang91/EdgeFormer/blob/main/Readme.md)
 
 **EdgeFormer** PyTorch 代码
 
@@ -17,7 +18,7 @@ class="center">
 ## 简介
 
 Edgeformer 是一个纯卷积结构的轻量化骨干模型，它继承了卷积网络的优点，又融合了vision transformer 模型的长处。 具体来说，首先，我们提出了一个轻量化的操作，全局循环卷积（global circular convolution, GCC）
-。GCC中，我们以全局循环的形式提取全局特征，引入位置编码确保该操作对位置信息的敏感性。然后，基于GCC， 我们构建了一个纯卷积结构的meta-former结构。改结构舍弃了self attention 硬件支持不友好的操作， 
+。GCC中，我们以全局循环的形式提取全局特征，引入位置编码确保该操作对位置信息的敏感性。然后，基于GCC， 我们构建了一个纯卷积结构的meta-former结构。该结构舍弃了self attention 硬件支持不友好的操作， 
 但是保留了传统transformer block 提取全局特征的特点。最后，我们在纯卷积结构的meta-former中引入硬件支持较为友好的通道注意力机制在channel mixer 部分，使得我们的纯卷积meta-former结构也具备attention的特点。
 我们将最终得到的结构命名为EdgeFormer block， 这是一个即插即用的模块结构，可以插入到当前的现有的卷积模型和vision transformer 模型中去。
 实验结果表明，我们所提出的EdgeFormer在图像分类，目标检测及语义分割三个视觉任务上取得了比现有的轻量化卷积网络结构及vision transformer 模型更高的精度。拿在ImageNet-1k上的分类任务来说，我们的Edgefomer 仅使用约500万参数，取得了78.6 的分类精度。
