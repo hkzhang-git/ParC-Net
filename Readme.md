@@ -1,6 +1,8 @@
 
 # EdgeFormer: Improving Light-weight ConvNets by Learning from Vision Transformers
 
+[中文版]（https://github.com/hkzhang91/EdgeFormer/blob/main/REDAME_ch.md）
+
 Official PyTorch implementation of **EdgeFormer**
 
 ---
