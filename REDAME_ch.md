@@ -105,5 +105,5 @@ CUDA_VISIBLE_DEVICES=0 python eval_seg.py --common.config-file ./config/detectio
 ``` 
 
 ## 致谢
-我们的Edgeformer实现时，借用了MobileViT 的代码 （[source code](https://github.com/apple/ml-cvnets））。 对MobileViT 的作者分享代码表示感谢。如果大家觉得我们的代码对您的科研有帮助，可以考虑引用我们的文章和MobiViT.
+我们的Edgeformer实现时，借用了MobileViT 的代码 （https://github.com/apple/ml-cvnets）。 对MobileViT 的作者分享代码表示感谢。如果大家觉得我们的代码对您的科研有帮助，可以考虑引用我们的文章和MobiViT.
 
