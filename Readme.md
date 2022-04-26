@@ -53,6 +53,9 @@ We deploy the proposed EdgeFormer on a widely used low power chip Rockchip RK328
 | MobileViT-S | 5.6 | 2010 |  457| 78.4 |
 | EdgeFormer-S | 5.0 (-11%)| 1740 (-13%) |  353 (+23%)| 78.6 (+0.2%) |
 
+### Combination of EdgeFormer and ConvNext
+In terms of designing a pure ConvNet via learning from ViTs, our proposed EdgeFormer is most closely related to a parallel work ConvNext. By comparing Edgeformer with Convnext, we notice that their improvements are different and complementary. To verify this point, we build a combination network, where Edgeformer blocks are used to replace several ConvNext blocks in the end of last two stages. Experimental results show that **such an replacement operation signifcantly improves classification accuracy, while slightly decreases parameters**. Corresponding code will be released soon. 
+
 ## Installation
 We implement EdgeFomer with PyTorch-1.9.0, CUDA=11.1. 
 ### PiP
