@@ -56,7 +56,7 @@ We deploy the proposed EdgeFormer on a widely used low power chip Rockchip RK328
 ### Combination of EdgeFormer and ConvNext
 
 <p align="center">
-<img src="https://s1.ax1x.com/2022/04/28/LOoPu4.png" width=60% height=60% 
+<img src="https://s1.ax1x.com/2022/04/28/LOoPu4.png" width=40% height=40% 
 class="center">
 </p>
 
