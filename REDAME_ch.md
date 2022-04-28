@@ -56,7 +56,13 @@ class="center">
 | EdgeFormer-S | 5.0 (-11%)| 1740 (-13%) |  353 (+23%)| 78.6 (+0.2%) |
 
 ### 合并Edgeformer 和ConvNext
-ConvNext 和 我们提出地EdgeFormer 都是纯卷积地结构。这两份工作是同时期独立研究的，方法中涉及的创新点是不同的，也是互补的。为了验证这一点，我们结合两者所长，构建了一个合并网络。具体来说，我们用几个Edgeformer 模块替换了ConvNext 后两个stage 里边的几个模块。 这样一个替换，有效地提升了分类精度，同时还轻微地减少了参数量。 我们分析，这个改进使得整个合并网络在浅层关注local信息，在深层关注global 信息，这一结构比一直使用local conv 更合理。对应的code 很快会更新。
+
+<p align="center">
+<img src="https://s1.ax1x.com/2022/04/28/LOoPu4.png" width=40% height=40% 
+class="center">
+</p>
+
+ConvNext 和 我们提出地EdgeFormer 都是纯卷积地结构。这两份工作是同时期独立研究的，方法中涉及的创新点是不同的，也是互补的。为了验证这一点，我们结合两者所长，构建了一个合并网络。具体来说，我们用几个Edgeformer 模块替换了ConvNext 后两个stage 里边的几个模块。 **这样一个替换，有效地提升了分类精度(提升0.8 个点)，同时还轻微地减少了参数量和运算量**。 我们分析，这个改进使得整个合并网络在浅层关注local信息，在深层关注global 信息，这一结构比一直使用local conv 更合理。对应的code 很快会更新。
 
 ## 安装
 我们的实验环境是Pytorch 1.9.0, CUDA-11.1. 实际上 PyTorch 1.8.0 都是可以work的， Pytorch 1.8.0 更早的版本我们没有测试过。
