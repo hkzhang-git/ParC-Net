@@ -18,9 +18,7 @@ class="center">
 
 
 ## Introduction
-EdgeFormer, a pure ConvNet based light weight backbone model that inherits advantages of ConvNets and integrates strengths of vision transformers. Specifically, we propose global
-circular convolution (GCC) with position embeddings, a light-weight convolution op which boasts a global receptive field while producing location sensitive features as in local convolutions. We combine the GCCs and squeeze-exictation ops to form a meta-former like model block, which further has the attention mechanism like transformers. The aforementioned block can be used in plug-and-play manner to replace relevant blocks in ConvNets or transformers. Experiment results show that the proposed EdgeFormer achieves better performance than popular light-weight ConvNets and vision transformer based models in common vision tasks and datasets, while having fewer parameters and faster inference
-speed. For classification on ImageNet-1k, EdgeFormer achieves 78.6% top-1 accuracy with about 5.0 million parameters, saving 11% parameters and 13% computational cost but gaining 0.2% higher accuracy and 23% faster inference speed (on ARM based Rockchip RK3288) compared with MobileViT. 
+EdgeFormer, a pure ConvNet based light weight backbone model that inherits advantages of ConvNets and integrates strengths of vision transformers. Specifically, we propose global circular convolution (GCC) with position embeddings, a light-weight convolution op which boasts a global receptive field while producing location sensitive features as in local convolutions. We combine the GCCs and squeeze-exictation ops to form a meta-former like model block, which further has the attention mechanism like transformers. The aforementioned block can be used in plug-and-play manner to replace relevant blocks in ConvNets or transformers. Experiment results show that the proposed EdgeFormer achieves better performance than popular light-weight ConvNets and vision transformer based models in common vision tasks and datasets, while having fewer parameters and faster inference speed. For classification on ImageNet-1k, EdgeFormer achieves 78.6% top-1 accuracy with about 5.0 million parameters, saving 11% parameters and 13% computational cost but gaining 0.2% higher accuracy and 23% faster inference speed (on ARM based Rockchip RK3288) compared with MobileViT. 
 
 ## EdgeFormer block
 <p align="center">
@@ -60,19 +58,19 @@ We deploy the proposed EdgeFormer on a widely used low power chip Rockchip RK328
 class="center">
 </p>
 
-In terms of designing a pure ConvNet via learning from ViTs, our proposed EdgeFormer is most closely related to a parallel work ConvNext. By comparing Edgeformer with Convnext, we notice that their improvements are different and complementary. To verify this point, we build a combination network, where Edgeformer blocks are used to replace several ConvNext blocks in the end of last two stages. Experimental results show that **such an replacement operation signifcantly improves classification accuracy, while slightly decreases parameters**. Corresponding code will be released soon. 
+In terms of designing a pure ConvNet via learning from ViTs, our proposed EdgeFormer is most closely related to a parallel work ConvNext. By comparing Edgeformer with Convnext, we notice that their improvements are different and complementary. To verify this point, we build a combination network, where Edgeformer blocks are used to replace several ConvNext blocks in the end of last two stages. Experiment results show that **the replacement signifcantly improves classification accuracy, while slightly decreases the number of parameters**. Corresponding code will be released soon. 
 
 
 
 ## Installation
-We implement EdgeFomer with PyTorch-1.9.0, CUDA=11.1. 
+We implement the EdgeFomer with PyTorch-1.9.0, CUDA=11.1. 
 ### PiP
 The environment can be build in the local python environment using the below command:
 ``` 
 pip install -r requirements.txt
 ```
 ### Dokcer
-A docker image containing environment will be provided soon. 
+A docker image containing the environment will be provided soon. 
 
 ## Training
 Training settings are listed in yaml files (./config/classification/xxx/xxxx.yaml, ./config/detection/xxx/xxxx.yaml, ./config/segmentation/xxx/xxxx.yaml  )
@@ -114,7 +112,7 @@ CUDA_VISIBLE_DEVICES=0 python eval_seg.py --common.config-file ./config/detectio
 ``` 
 
 ## Acknowledgement
-We thanks authors of Mobilevit for sharing their code. We implement EdgeFormer based on their [source code](https://github.com/apple/ml-cvnets). If you find this code is helpful in your research, please consider citing our paper and [Mobilevit](https://arxiv.org/abs/2110.02178?context=cs.LG)
+We thank authors of MobileVit for sharing their code. We implement our EdgeFormer based on their [source code](https://github.com/apple/ml-cvnets). If you find this code is helpful in your research, please consider citing our paper and [MobileVit](https://arxiv.org/abs/2110.02178?context=cs.LG)
 
 
 
