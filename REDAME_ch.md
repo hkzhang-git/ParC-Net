@@ -48,12 +48,12 @@ class="center">
 | Segmentation   | 79.7 (mIOU)     | 5.8 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
 
 ### 推理速度
-我们将EdgeFormer 和 基线模型MobileVit 部署到低算力的芯片板子RK3288上进行推理速度测试。 我们首先将pytorch 模型转换为ONNX 格式，然后将ONNX格式转换维MNN格式，最终部署到板子上测速。 为了保证结果的稳定，我们测速了一百次，并对比平均速度。
+我们将EdgeFormer 和 基线模型MobileVit 部署到低算力的芯片板子RK3288及自研微功耗芯片上进行推理速度测试。 我们首先将pytorch 模型转换为ONNX 格式，然后将ONNX格式转换维MNN格式，最终部署到板子上测速。 为了保证结果的稳定，我们测速了一百次，并对比平均速度。
 
-| Models | #params (M) | Madds (M)| inference speed (ms) | Top1 acc |
-|:---:|:---:|:---:|:---:|:---:|
-| MobileViT-S | 5.6 | 2010 |  457| 78.4 |
-| EdgeFormer-S | 5.0 (-11%)| 1740 (-13%) |  353 (+23%)| 78.6 (+0.2%) |
+| Models | #params (M) | Madds (M)| RK3288 inference speed (ms) |  自研微功耗芯片推理速度 (ms) | Top1 acc |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| MobileViT-S | 5.6 | 2010 |  457| 368   | 78.4 |
+| EdgeFormer-S | 5.0 (-11%)| 1740 (-13%) |  353 (+23%)| 98 (3.77x)|78.6 (+0.2%) |
 
 ### 合并Edgeformer 和ConvNext
 
