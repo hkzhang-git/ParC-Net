@@ -53,12 +53,30 @@ We deploy the proposed EdgeFormer on a widely used low power chip Rockchip RK328
 
 ### Combination of EdgeFormer and ConvNext
 
+| Models | # params | Top1 acc |
+|:---:|:---:|:---:|
+| ConvNext-XT       | 7.44 (M) | 77.5 |
+| ConvNext-GCC-XT   | 7.41 (M) | 78.3 (+0.8)|
+| ConvNext-T        |          | training |
+| ConvNext-GCC-T    |          | training |
+
+
+| Models | # params | AP box  |  AP50 box  |  AP75 box  |  AP mask   |  AP50 mask  |  AP75 mask |
+|:---:|:---:|:---:||:---:|:---:|:---:||:---:|:---:|
+| ConvNext-XT       | - | 47.2  |  65.6   |  51.4  |  41.0  |  63.0  |  44.2 |
+| ConvNext-GCC-XT   | - | 47.7  |  66.2   |  52.0  |  41.5  |  63.6  |  44.6 |
+| ConvNext-T        | - | training |
+| ConvNext-GCC-T    | - | training |
+
+
 <p align="center">
 <img src="https://s1.ax1x.com/2022/04/28/LOoPu4.png" width=40% height=40% 
 class="center">
 </p>
 
 In terms of designing a pure ConvNet via learning from ViTs, our proposed EdgeFormer is most closely related to a parallel work ConvNext. By comparing Edgeformer with Convnext, we notice that their improvements are different and complementary. To verify this point, we build a combination network, where Edgeformer blocks are used to replace several ConvNext blocks in the end of last two stages. Experiment results show that **the replacement signifcantly improves classification accuracy, while slightly decreases the number of parameters**. Corresponding code will be released soon. 
+
+
 
 
 
