@@ -53,6 +53,7 @@ We deploy the proposed EdgeFormer on a widely used low power chip Rockchip RK328
 
 ### Combination of EdgeFormer and ConvNext
 
+Classification experiments
 | Models | # params | Top1 acc |
 |:---:|:---:|:---:|
 | ConvNext-XT       | 7.44 (M) | 77.5 |
@@ -60,13 +61,13 @@ We deploy the proposed EdgeFormer on a widely used low power chip Rockchip RK328
 | ConvNext-T        |          | training |
 | ConvNext-GCC-T    |          | training |
 
-
+Detection experiments
 | Models | # params | AP box  |  AP50 box  |  AP75 box  |  AP mask   |  AP50 mask  |  AP75 mask |
 |:---:|:---:|:---:||:---:|:---:|:---:||:---:|:---:|
 | ConvNext-XT       | - | 47.2  |  65.6   |  51.4  |  41.0  |  63.0  |  44.2 |
 | ConvNext-GCC-XT   | - | 47.7  |  66.2   |  52.0  |  41.5  |  63.6  |  44.6 |
-| ConvNext-T        | - | training |
-| ConvNext-GCC-T    | - | training |
+| ConvNext-T        | - | training |      |        |        |        |       |
+| ConvNext-GCC-T    | - | training |      |        |        |        |       |
 
 
 <p align="center">
