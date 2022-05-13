@@ -44,7 +44,7 @@ class="center">
 | Segmentation   | 79.7 (mIOU)     | 5.8 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
 
 ### Inference speed
-We deploy the proposed EdgeFormer and baseline on widely used low power chip Rockchip RK3288 and our own micro-power chip, then compare it with baseline. We use ONNX [1] and MNN to port these models to RK3288 and time each model for 100 iterations to measure the average inference speed.
+We deploy the proposed EdgeFormer and baseline on widely used low power chip Rockchip RK3288 and our own micro-power chip for comparison. We use ONNX [1] and MNN to port these models to RK3288 and micro-power chip and time each model for 100 iterations to measure the average inference speed.
 
 | Models | #params (M) | Madds (M)| RK3288 inference speed (ms) | micro-power chip (ms)| Top1 acc |
 |:---:|:---:|:---:|:---:|:---:|:---:|
