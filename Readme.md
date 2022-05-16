@@ -71,6 +71,9 @@ Detection experiments
 | ConvNext-T        | - | training |      |        |        |        |       |
 | ConvNext-GCC-T    | - | training |      |        |        |        |       |
 
+Segmentation experiments
+Training
+
 
 <p align="center">
 <img src="https://s1.ax1x.com/2022/04/28/LOoPu4.png" width=40% height=40% 
