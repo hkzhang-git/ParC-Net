@@ -54,12 +54,14 @@ We deploy the proposed EdgeFormer and baseline on widely used low power chip Roc
 ### Combination of EdgeFormer and ConvNext
 
 Classification experiments
-| Models | # params | Top1 acc |
-|:---:|:---:|:---:|
-| ConvNext-XT       | 7.44 (M) | 77.5 |
-| ConvNext-GCC-XT   | 7.41 (M) | 78.3 (+0.8)|
-| ConvNext-T        |          | training |
-| ConvNext-GCC-T    |          | training |
+| Models | # params | Top1 acc | GPUs |
+|:---:|:---:|:---:|:---:|
+| ConvNext-XT       | 7.44 (M) | 77.5        | 8*RTX2080ti |    
+| ConvNext-GCC-XT   | 7.41 (M) | 78.3 (+0.8) | 8*RTX2080ti |
+| ConvNext-T        |          | training    | 8*RTX3090   |
+| ConvNext-GCC-T    |          | training    | 8*RTX3090   |
+| ConvNext-T        |          | training    | 8*A100     |
+| ConvNext-GCC-T    |          | training    | 8*A100     |
 
 Detection experiments
 | Models | # params | AP box  |  AP50 box  |  AP75 box  |  AP mask   |  AP50 mask  |  AP75 mask |
