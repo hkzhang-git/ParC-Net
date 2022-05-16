@@ -72,19 +72,22 @@ Detection experiments
 | ConvNext-GCC-T    | - | training |      |        |        |        |       |
 
 Segmentation experiments
+
 Training
 
+ConvNext block and ConvNext-GCC block
+<p align="center">
+<img src="https://s1.ax1x.com/2022/05/16/OWxqNd.png" width=40% height=40% 
+class="center">
+</p>
 
+Convergence curves of ConvNext and ConvNext-GCC
 <p align="center">
 <img src="https://s1.ax1x.com/2022/04/28/LOoPu4.png" width=40% height=40% 
 class="center">
 </p>
 
 In terms of designing a pure ConvNet via learning from ViTs, our proposed EdgeFormer is most closely related to a parallel work ConvNext. By comparing Edgeformer with Convnext, we notice that their improvements are different and complementary. To verify this point, we build a combination network, where Edgeformer blocks are used to replace several ConvNext blocks in the end of last two stages. Experiment results show that **the replacement signifcantly improves classification accuracy, while slightly decreases the number of parameters**. Corresponding code will be released soon. 
-
-
-
-
 
 ## Installation
 We implement the EdgeFomer with PyTorch-1.9.0, CUDA=11.1. 
