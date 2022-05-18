@@ -58,18 +58,14 @@ Classification experiments
 |:---:|:---:|:---:|:---:|
 | ConvNext-XT       | 7.44 (M) | 77.5        | 8*RTX2080ti |    
 | ConvNext-GCC-XT   | 7.41 (M) | 78.3 (+0.8) | 8*RTX2080ti |
-| ConvNext-T        |          | training    | 8*RTX3090   |
-| ConvNext-GCC-T    |          | training    | 8*RTX3090   |
-| ConvNext-T        |          | training    | 8*A100     |
-| ConvNext-GCC-T    |          | training    | 8*A100     |
+
 
 Detection experiments
 | Models | # params | AP box  |  AP50 box  |  AP75 box  |  AP mask   |  AP50 mask  |  AP75 mask |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ConvNext-XT       | - | 47.2  |  65.6   |  51.4  |  41.0  |  63.0  |  44.2 |
 | ConvNext-GCC-XT   | - | 47.7  |  66.2   |  52.0  |  41.5  |  63.6  |  44.6 |
-| ConvNext-T        | - | training |      |        |        |        |       |
-| ConvNext-GCC-T    | - | training |      |        |        |        |       |
+
 
 Segmentation experiments
 
