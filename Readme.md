@@ -53,20 +53,22 @@ a in house unpublished low power neural network processor that highly optimizes 
 | EdgeFormer-S | 5.0 (-11%)| 1740 (-13%) | 353 (+23%)| 98 (3.77x) | 78.6 (+0.2%) |
 
 ### Applying Edgeformer designs on various lightweight backbones
-Classification experiments. CPU used here is Xeon E5-2680 v4. 
+Classification experiments. CPU used here is Xeon E5-2680 v4. *Authors of EdgeViT do not clarify the type of CPU used in their paper.
 
-| Models         |# params |Madds   |Devices |Speed(ms) |Top1 acc|
-|:---:|:---:|:---:|:---:|:---:|:---:|
-|MobileViT-S     | 5.6 M   | 2.0G   | RK3288 | 457 | 78.4 |
-|EdgeFormer-S    | 5.0 M   | 1.7G   | RK3288 | 353 | 78.6 |
-|MobileViT-S     | 5.6 M   | 2.0G   | DP2000 | 368 | 78.4 |
-|EdgeFormer-S    | 5.0 M   | 1.7G   | DP2000 | 98  | 78.6 |
-|ResNet50        | 26 M    | 2.1G   | CPU    | 98  | 78.8 |
-|GCC-ResNet50    | 24 M    | 2.0G   | CPU    | 98  | 79.6 |
-|MobileNetV2     | 3.5 M   | 0.3G   | CPU    | 24  | 70.2 |
-|GCC-MobileNetV2 | 3.5 M   | 0.3G   | CPU    | 27  | 71.1 |
-|ConvNext-XT     | 7.4 M   | 0.6G   | CPU    | 47  | 77.5 |
-|GCC-ConvNext-XT | 3.5 M   | 0.6G   | CPU    | 48  | 78.3 |
+| Models         |# params |Madds   |Devices |Speed(ms) |Top1 acc| Source |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|MobileViT-S     | 5.6 M   | 2.0G   | RK3288 | 457 | 78.4 | ICLR 22 |   
+|EdgeFormer-S    | 5.0 M   | 1.7G   | RK3288 | 353 | 78.6 | Ours    |
+|MobileViT-S     | 5.6 M   | 2.0G   | DP2000 | 368 | 78.4 | ICLR 22 |
+|EdgeFormer-S    | 5.0 M   | 1.7G   | DP2000 | 98  | 78.6 | Ours    |
+|ResNet50        | 26 M    | 2.1G   | CPU    | 98  | 78.8 | CVPR 16 |
+|GCC-ResNet50    | 24 M    | 2.0G   | CPU    | 98  | 79.6 | Ours    |
+|MobileNetV2     | 3.5 M   | 0.3G   | CPU    | 24  | 70.2 | CVPR 18 |
+|GCC-MobileNetV2 | 3.5 M   | 0.3G   | CPU    | 27  | 71.1 | Ours    |
+|ConvNext-XT     | 7.4 M   | 0.6G   | CPU    | 47  | 77.5 | CVPR 22 |
+|GCC-ConvNext-XT | 7.4 M   | 0.6G   | CPU    | 48  | 78.3 | Ours    |
+|EdgeViT-XS      | 6.7 M   | 1.1G   | CPU*   | 54* | 77.5 | Arxiv 22/05 |
+|GCC-EdgeViT-XS  |         |        |        |     |      |         |
 
 
 Detection experiments
