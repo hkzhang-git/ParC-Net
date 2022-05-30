@@ -44,32 +44,41 @@ class="center">
 | Segmentation   | 79.7 (mIOU)     | 5.8 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
 
 ### Inference speed
-We deploy the proposed EdgeFormer and baseline on widely used low power chip Rockchip RK3288 and our own micro-power chip for comparison. We use ONNX [1] and MNN to port these models to RK3288 and micro-power chip and time each model for 100 iterations to measure the average inference speed.
+We deploy the proposed EdgeFormer and baseline on widely used low power chip Rockchip RK3288 and DP2000 chip for comparison. DP2000 is the code name of
+a in house unpublished low power neural network processor that highly optimizes the convolutions. We use ONNX [1] and MNN to port these models to RK3288 and DP2000 chip and time each model for 100 iterations to measure the average inference speed.
 
-| Models | #params (M) | Madds (M)| RK3288 inference speed (ms) | micro-power chip (ms)| Top1 acc |
+| Models | #params (M) | Madds (M)| RK3288 inference speed (ms) | DP2000 (ms)| Top1 acc |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | MobileViT-S | 5.6 | 2010 |  457| 368 | 78.4 |
 | EdgeFormer-S | 5.0 (-11%)| 1740 (-13%) | 353 (+23%)| 98 (3.77x) | 78.6 (+0.2%) |
 
-### Combination of EdgeFormer and ConvNext
+### Applying Edgeformer designs on various lightweight backbones
+Classification experiments. CPU used here is Xeon E5-2680 v4. 
 
-Classification experiments
-| Models | # params | Top1 acc | GPUs |
-|:---:|:---:|:---:|:---:|
-| ConvNext-XT       | 7.44 (M) | 77.5        | 8*RTX2080ti |    
-| ConvNext-GCC-XT   | 7.41 (M) | 78.3 (+0.8) | 8*RTX2080ti |
+| Models         |# params |Madds   |Devices |Speed(ms) |Top1 acc|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|MobileViT-S     | 5.6 M   | 2.0G   | RK3288 | 457 | 78.4 |
+|EdgeFormer-S    | 5.0 M   | 1.7G   | RK3288 | 353 | 78.6 |
+|MobileViT-S     | 5.6 M   | 2.0G   | DP2000 | 368 | 78.4 |
+|EdgeFormer-S    | 5.0 M   | 1.7G   | DP2000 | 98  | 78.6 |
+|ResNet50        | 26 M    | 2.1G   | CPU    | 98  | 78.8 |
+|GCC-ResNet50    | 24 M    | 2.0G   | CPU    | 98  | 79.6 |
+|MobileNetV2     | 3.5 M   | 0.3G   | CPU    | 24  | 70.2 |
+|GCC-MobileNetV2 | 3.5 M   | 0.3G   | CPU    | 27  | 71.1 |
+|ConvNext-XT     | 7.4 M   | 0.6G   | CPU    | 47  | 77.5 |
+|GCC-ConvNext-XT | 3.5 M   | 0.6G   | CPU    | 48  | 78.3 |
 
 
 Detection experiments
 | Models | # params | AP box  |  AP50 box  |  AP75 box  |  AP mask   |  AP50 mask  |  AP75 mask |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ConvNext-XT       | - | 47.2  |  65.6   |  51.4  |  41.0  |  63.0  |  44.2 |
-| ConvNext-GCC-XT   | - | 47.7  |  66.2   |  52.0  |  41.5  |  63.6  |  44.6 |
+| GCC-ConvNext-XT   | - | 47.7  |  66.2   |  52.0  |  41.5  |  63.6  |  44.6 |
 
 
 Segmentation experiments
 
-Training
+To be done
 
 ConvNext block and ConvNext-GCC block
 <p align="center">
@@ -77,13 +86,7 @@ ConvNext block and ConvNext-GCC block
 class="center">
 </p>
 
-Convergence curves of ConvNext and ConvNext-GCC
-<p align="center">
-<img src="https://s1.ax1x.com/2022/04/28/LOoPu4.png" width=40% height=40% 
-class="center">
-</p>
-
-In terms of designing a pure ConvNet via learning from ViTs, our proposed EdgeFormer is most closely related to a parallel work ConvNext. By comparing Edgeformer with Convnext, we notice that their improvements are different and complementary. To verify this point, we build a combination network, where Edgeformer blocks are used to replace several ConvNext blocks in the end of last two stages. Experiment results show that **the replacement signifcantly improves classification accuracy, while slightly decreases the number of parameters**. Corresponding code will be released soon. 
+In terms of designing a pure ConvNet via learning from ViTs, our proposed EdgeFormer is most closely related to a parallel work ConvNext. By comparing Edgeformer with Convnext, we notice that their improvements are different and complementary. To verify this point, we build a combination network, where Edgeformer blocks are used to replace several ConvNext blocks in the end of last two stages. Experiment results show that **the replacement signifcantly improves classification accuracy, while slightly decreases the number of parameters**. Results on ResNet50, MobileNetV2 and ConvNext-T shows that models which focus on optimizing FLOPs-accuracy trade-offs can also benefit from our EdgeFormer designs. Corresponding code will be released soon. 
 
 ## Installation
 We implement the EdgeFomer with PyTorch-1.9.0, CUDA=11.1. 
