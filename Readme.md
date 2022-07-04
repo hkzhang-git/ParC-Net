@@ -3,6 +3,10 @@
 
 [中文版](https://github.com/hkzhang91/EdgeFormer/blob/main/REDAME_ch.md)
 
+[EdgeFormer](https://arxiv.org/abs/2203.03952) ECCV 2022
+
+The name EdgeFormer will be changed in our camera ready version, as "Former" indicates that the model is some variant of transformer.
+
 Official PyTorch implementation of **EdgeFormer**
 
 ---
@@ -142,6 +146,22 @@ CUDA_VISIBLE_DEVICES=0 python eval_seg.py --common.config-file ./config/detectio
 ## Acknowledgement
 We thank authors of MobileVit for sharing their code. We implement our EdgeFormer based on their [source code](https://github.com/apple/ml-cvnets). If you find this code is helpful in your research, please consider citing our paper and [MobileVit](https://arxiv.org/abs/2110.02178?context=cs.LG)
 
+
+
+@inproceedings{zhang2022edgeformer,
+  title={EdgeFormer: Improving Light-weight ConvNets by Learning from Vision Transformers},
+  author={Zhang, Haokui and Hu, Wenze and Wang, Xiaoyu},
+  booktitle={European Conference on Computer Vision},
+  pages={},
+  year={2022}
+}
+
+@inproceedings{mehta2021mobilevit,
+  title={Mobilevit: light-weight, general-purpose, and mobile-friendly vision transformer},
+  author={Mehta, Sachin and Rastegari, Mohammad},
+  journal={ICLR},
+  year={2022}
+}
 
 
 
