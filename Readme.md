@@ -147,7 +147,7 @@ CUDA_VISIBLE_DEVICES=0 python eval_seg.py --common.config-file ./config/detectio
 We thank authors of MobileVit for sharing their code. We implement our EdgeFormer based on their [source code](https://github.com/apple/ml-cvnets). If you find this code is helpful in your research, please consider citing our paper and [MobileVit](https://arxiv.org/abs/2110.02178?context=cs.LG)
 
 
-
+```
 @inproceedings{zhang2022edgeformer,
   title={EdgeFormer: Improving Light-weight ConvNets by Learning from Vision Transformers},
   author={Zhang, Haokui and Hu, Wenze and Wang, Xiaoyu},
@@ -155,13 +155,14 @@ We thank authors of MobileVit for sharing their code. We implement our EdgeForme
   pages={},
   year={2022}
 }
-
+```
+```
 @inproceedings{mehta2021mobilevit,
   title={Mobilevit: light-weight, general-purpose, and mobile-friendly vision transformer},
   author={Mehta, Sachin and Rastegari, Mohammad},
   journal={ICLR},
   year={2022}
 }
-
+```
 
 
