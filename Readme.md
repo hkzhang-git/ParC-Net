@@ -1,13 +1,13 @@
 
-# PaCC-Net: Position Aware Circular Convolution with Merits from ConvNets and Transformer
+# ParC-Net: Position Aware Circular Convolution with Merits from ConvNets and Transformer
 
-[中文版](https://github.com/hkzhang91/EdgeFormer/blob/main/REDAME_ch.md)
+[中文版](https://github.com/hkzhang91/ParC-Net/blob/main/REDAME_ch.md)
 
-[PaCC-Net](https://arxiv.org/abs/2203.03952) ECCV 2022
+[ParC-Net](https://arxiv.org/abs/2203.03952) ECCV 2022
 
-This reposity was named EdgeFormer, which is changed to PaCC-Net, as "Former" indicates that the model is some variant of transformer.
+This reposity was named EdgeFormer, which is changed to ParC-Net, as "Former" indicates that the model is some variant of transformer.
 
-Official PyTorch implementation of **PaCC-Net**
+Official PyTorch implementation of **ParC-Net**
 
 ---
 <p align="center">
@@ -22,9 +22,9 @@ class="center">
 
 
 ## Introduction
-Recently, vision transformers started to show impressive results which outperform large convolution based models significantly. However, in the area of small models for mobile or resource constrained devices, ConvNet still has its own advantages in both performance and model complexity. We propose PaCC-Net, a pure ConvNet based backbone model that further strengthens these advantages by fusing the merits of vision transformers into ConvNets.  Specifically, we propose position aware circular convolution (PaCC), a light-weight convolution op which boasts a global receptive field while producing location sensitive features as in local convolutions. We combine the PaCCs and squeeze-exictation ops to form a meta-former like model block, which further has the attention mechanism like transformers. The aforementioned block can be used in plug-and-play manner to replace relevant blocks in ConvNets or transformers. Experiment results show that the proposed PaCC-Net achieves better performance than popular light-weight ConvNets and vision transformer based models in common vision tasks and datasets, while having fewer parameters and faster inference speed. For classification on ImageNet-1k, PaCC-Net achieves 78.6% top-1 accuracy with about 5.0 million parameters, saving 11% parameters and 13% computational cost but gaining 0.2% higher accuracy and 23% faster inference speed (on ARM based Rockchip RK3288) compared with MobileViT, and uses only 0.5× parameters but gaining 2.7% accuracy compared with DeIT. On MS-COCO object detection and PASCAL VOC segmentation tasks, PaCC-Net also shows better performance.
+Recently, vision transformers started to show impressive results which outperform large convolution based models significantly. However, in the area of small models for mobile or resource constrained devices, ConvNet still has its own advantages in both performance and model complexity. We propose ParC-Net, a pure ConvNet based backbone model that further strengthens these advantages by fusing the merits of vision transformers into ConvNets.  Specifically, we propose position aware circular convolution (ParC), a light-weight convolution op which boasts a global receptive field while producing location sensitive features as in local convolutions. We combine the ParCs and squeeze-exictation ops to form a meta-former like model block, which further has the attention mechanism like transformers. The aforementioned block can be used in plug-and-play manner to replace relevant blocks in ConvNets or transformers. Experiment results show that the proposed ParC-Net achieves better performance than popular light-weight ConvNets and vision transformer based models in common vision tasks and datasets, while having fewer parameters and faster inference speed. For classification on ImageNet-1k, ParC-Net achieves 78.6% top-1 accuracy with about 5.0 million parameters, saving 11% parameters and 13% computational cost but gaining 0.2% higher accuracy and 23% faster inference speed (on ARM based Rockchip RK3288) compared with MobileViT, and uses only 0.5× parameters but gaining 2.7% accuracy compared with DeIT. On MS-COCO object detection and PASCAL VOC segmentation tasks, ParC-Net also shows better performance.
 
-## PaCC block
+## ParC block
 <p align="center">
 <img src="https://s1.ax1x.com/2022/03/16/qpaZwQ.png" width=60% height=60% 
 class="center">
@@ -54,7 +54,7 @@ a in house unpublished low power neural network processor that highly optimizes 
 | Models | #params (M) | Madds (M)| RK3288 inference speed (ms) | DP2000 (ms)| Top1 acc |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | MobileViT-S | 5.6 | 2010 |  457| 368 | 78.4 |
-| PaCC-Net-S | 5.0 (-11%)| 1740 (-13%) | 353 (+23%)| 98 (3.77x) | 78.6 (+0.2%) |
+| ParC-Net-S | 5.0 (-11%)| 1740 (-13%) | 353 (+23%)| 98 (3.77x) | 78.6 (+0.2%) |
 
 ### Applying Edgeformer designs on various lightweight backbones
 Classification experiments. CPU used here is Xeon E5-2680 v4. *Authors of EdgeViT do not clarify the type of CPU used in their paper.
@@ -62,24 +62,24 @@ Classification experiments. CPU used here is Xeon E5-2680 v4. *Authors of EdgeVi
 | Models         |# params |Madds   |Devices |Speed(ms) |Top1 acc| Source |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |MobileViT-S     | 5.6 M   | 2.0G   | RK3288 | 457 | 78.4 | ICLR 22 |   
-|PaCC-Net-S    | 5.0 M   | 1.7G   | RK3288 | 353 | 78.6 | Ours    |
+|ParC-Net-S    | 5.0 M   | 1.7G   | RK3288 | 353 | 78.6 | Ours    |
 |MobileViT-S     | 5.6 M   | 2.0G   | DP2000 | 368 | 78.4 | ICLR 22 |
-|PaCC-Net-S    | 5.0 M   | 1.7G   | DP2000 | 98  | 78.6 | Ours    |
+|ParC-Net-S    | 5.0 M   | 1.7G   | DP2000 | 98  | 78.6 | Ours    |
 |ResNet50        | 26 M    | 2.1G   | CPU    | 98  | 78.8 | CVPR 16 |
-|PaCC-ResNet50    | 24 M    | 2.0G   | CPU    | 98  | 79.6 | Ours    |
+|ParC-ResNet50    | 24 M    | 2.0G   | CPU    | 98  | 79.6 | Ours    |
 |MobileNetV2     | 3.5 M   | 0.3G   | CPU    | 24  | 70.2 | CVPR 18 |
-|PaCC-MobileNetV2 | 3.5 M   | 0.3G   | CPU    | 27  | 71.1 | Ours    |
+|ParC-MobileNetV2 | 3.5 M   | 0.3G   | CPU    | 27  | 71.1 | Ours    |
 |ConvNext-XT     | 7.4 M   | 0.6G   | CPU    | 47  | 77.5 | CVPR 22 |
-|PaCC-ConvNext-XT | 7.4 M   | 0.6G   | CPU    | 48  | 78.3 | Ours    |
+|ParC-ConvNext-XT | 7.4 M   | 0.6G   | CPU    | 48  | 78.3 | Ours    |
 |EdgeViT-XS      | 6.7 M   | 1.1G   | CPU*   | 54* | 77.5 | Arxiv 22/05 |
-|PaCC-EdgeViT-XS  |         |        |        |     |      |         |
+|ParC-EdgeViT-XS  |         |        |        |     |      |         |
 
 
 Detection experiments
 | Models | # params | AP box  |  AP50 box  |  AP75 box  |  AP mask   |  AP50 mask  |  AP75 mask |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ConvNext-XT       | - | 47.2  |  65.6   |  51.4  |  41.0  |  63.0  |  44.2 |
-| PaCC-ConvNext-XT   | - | 47.7  |  66.2   |  52.0  |  41.5  |  63.6  |  44.6 |
+| ParC-ConvNext-XT   | - | 47.7  |  66.2   |  52.0  |  41.5  |  63.6  |  44.6 |
 
 
 Segmentation experiments
@@ -92,10 +92,10 @@ ConvNext block and ConvNext-GCC block
 class="center">
 </p>
 
-In terms of designing a pure ConvNet via learning from ViTs, our proposed PaCC-Net is most closely related to a parallel work ConvNext. By comparing PaCC-Net with Convnext, we notice that their improvements are different and complementary. To verify this point, we build a combination network, where PaCC blocks are used to replace several ConvNext blocks in the end of last two stages. Experiment results show that **the replacement signifcantly improves classification accuracy, while slightly decreases the number of parameters**. Results on ResNet50, MobileNetV2 and ConvNext-T shows that models which focus on optimizing FLOPs-accuracy trade-offs can also benefit from our PaCC-Net designs. Corresponding code will be released soon. 
+In terms of designing a pure ConvNet via learning from ViTs, our proposed ParC-Net is most closely related to a parallel work ConvNext. By comparing ParC-Net with Convnext, we notice that their improvements are different and complementary. To verify this point, we build a combination network, where ParC blocks are used to replace several ConvNext blocks in the end of last two stages. Experiment results show that **the replacement signifcantly improves classification accuracy, while slightly decreases the number of parameters**. Results on ResNet50, MobileNetV2 and ConvNext-T shows that models which focus on optimizing FLOPs-accuracy trade-offs can also benefit from our ParC-Net designs. Corresponding code will be released soon. 
 
 ## Installation
-We implement the PaCC-Net with PyTorch-1.9.0, CUDA=11.1. 
+We implement the ParC-Net with PyTorch-1.9.0, CUDA=11.1. 
 ### PiP
 The environment can be build in the local python environment using the below command:
 ``` 
@@ -148,8 +148,8 @@ We thank authors of MobileVit for sharing their code. We implement our EdgeForme
 
 
 ```
-@inproceedings{zhang2022edgeformer,
-  title={EdgeFormer: Improving Light-weight ConvNets by Learning from Vision Transformers},
+@inproceedings{zhang2022parcnet,
+  title={ParC-Net: Position Aware Circular Convolution with Merits from ConvNets and Transformer},
   author={Zhang, Haokui and Hu, Wenze and Wang, Xiaoyu},
   booktitle={European Conference on Computer Vision},
   pages={},
