@@ -84,7 +84,10 @@ Detection experiments
 
 Segmentation experiments
 
-To be done
+| Models | # params | mIoU  |  mACC  |  aACC  |
+|:---:|:---:|:---:|:---:|:---:|
+| ConvNext-XT       | - | 42.17  |  54.18   |  79.72  |
+| ParC-ConvNext-XT   | - | 42.32  |  54.48   |  80.30  |
 
 ConvNext block and ConvNext-GCC block
 <p align="center">
