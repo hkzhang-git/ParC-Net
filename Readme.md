@@ -48,10 +48,10 @@ class="center">
 | Segmentation   | 79.7 (mIOU)     | 5.8 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
 
 ### Inference speed
-We deploy the proposed EdgeFormer and baseline on widely used low power chip Rockchip RK3288 and DP2000 chip for comparison. DP2000 is the code name of
-a in house unpublished low power neural network processor that highly optimizes the convolutions. We use ONNX [1] and MNN to port these models to RK3288 and DP2000 chip and time each model for 100 iterations to measure the average inference speed.
+We deploy the proposed EdgeFormer and baseline on widely used low power chip Rockchip RK3288 and DP chip for comparison. DP is the code name of
+a in house unpublished low power neural network processor that highly optimizes the convolutions. We use ONNX [1] and MNN to port these models to RK3288 and DP chip and time each model for 100 iterations to measure the average inference speed.
 
-| Models | #params (M) | Madds (M)| RK3288 inference speed (ms) | DP2000 (ms)| Top1 acc |
+| Models | #params (M) | Madds (M)| RK3288 inference speed (ms) | DP (ms)| Top1 acc |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | MobileViT-S | 5.6 | 2010 |  457| 368 | 78.4 |
 | ParC-Net-S | 5.0 (-11%)| 1740 (-13%) | 353 (+23%)| 98 (3.77x) | 78.6 (+0.2%) |
@@ -63,8 +63,8 @@ Classification experiments. CPU used here is Xeon E5-2680 v4. *Authors of EdgeVi
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |MobileViT-S     | 5.6 M   | 2.0G   | RK3288 | 457 | 78.4 | ICLR 22 |   
 |ParC-Net-S    | 5.0 M   | 1.7G   | RK3288 | 353 | 78.6 | Ours    |
-|MobileViT-S     | 5.6 M   | 2.0G   | DP2000 | 368 | 78.4 | ICLR 22 |
-|ParC-Net-S    | 5.0 M   | 1.7G   | DP2000 | 98  | 78.6 | Ours    |
+|MobileViT-S     | 5.6 M   | 2.0G   | DP | 368 | 78.4 | ICLR 22 |
+|ParC-Net-S    | 5.0 M   | 1.7G   | DP | 98  | 78.6 | Ours    |
 |ResNet50        | 26 M    | 2.1G   | CPU    | 98  | 78.8 | CVPR 16 |
 |ParC-ResNet50    | 24 M    | 2.0G   | CPU    | 98  | 79.6 | Ours    |
 |MobileNetV2     | 3.5 M   | 0.3G   | CPU    | 24  | 70.2 | CVPR 18 |
