@@ -11,12 +11,12 @@ Official PyTorch implementation of **ParC-Net**
 
 ---
 <p align="center">
-<img src="https://s1.ax1x.com/2022/07/27/vSRt7d.png" width=100% height=100% 
+<img src="https://s1.ax1x.com/2022/07/27/vSRJne.png" width=100% height=100% 
 class="center">
 </p>
 
 <p align="center">
-<img src="https://s1.ax1x.com/2022/03/16/qpE27Q.png" width=60% height=60% 
+<img src="https://s1.ax1x.com/2022/07/27/vSR8XD.png" width=60% height=60% 
 class="center">
 </p>
 
@@ -26,14 +26,14 @@ Recently, vision transformers started to show impressive results which outperfor
 
 ## ParC block
 <p align="center">
-<img src="https://s1.ax1x.com/2022/03/16/qpaZwQ.png" width=60% height=60% 
+<img src="https://s1.ax1x.com/2022/07/27/vSRt7d.png" width=60% height=60% 
 class="center">
 </p>
 
 ## Position aware circular convolution
 
 <p align="center">
-<img src="https://s1.ax1x.com/2022/03/16/qpaeoj.png" width=60% height=60% 
+<img src="https://s1.ax1x.com/2022/07/27/vSRY0H.png" width=60% height=60% 
 class="center">
 </p>
 
