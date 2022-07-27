@@ -11,7 +11,7 @@ Official PyTorch implementation of **ParC-Net**
 
 ---
 <p align="center">
-<img src="https://s1.ax1x.com/2022/03/16/qpPfb9.png" width=100% height=100% 
+<img src="https://s1.ax1x.com/2022/07/27/vSRt7d.png" width=100% height=100% 
 class="center">
 </p>
 
