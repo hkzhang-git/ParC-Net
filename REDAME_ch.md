@@ -1,46 +1,45 @@
-# EdgeFormer: Improving Light-weight ConvNets by Learning from Vision Transformers
+# ParC-Net: Position Aware Circular Convolution with Merits from ConvNets and Transformer
 [English version](https://github.com/hkzhang91/EdgeFormer/blob/main/Readme.md)
 
-**EdgeFormer** PyTorch 代码
+**ParC-Net** PyTorch 代码
 
 ---
 <p align="center">
-<img src="https://s1.ax1x.com/2022/03/16/qpPfb9.png" width=100% height=100% 
+<img src="https://s1.ax1x.com/2022/07/27/vSRJne.png" width=100% height=100% 
 class="center">
 </p>
 
 <p align="center">
-<img src="https://s1.ax1x.com/2022/03/16/qpE27Q.png" width=60% height=60% 
+<img src="https://s1.ax1x.com/2022/07/27/vSR8XD.png" width=60% height=60% 
 class="center">
 </p>
 
 
 ## 简介
 
-Edgeformer 是一个纯卷积结构的轻量化骨干模型，它继承了卷积网络的优点，又融合了vision transformer 模型的长处。 具体来说，首先，我们提出了一个轻量化的操作，全局循环卷积（global circular convolution, GCC）
-。GCC中，我们以全局循环的形式提取全局特征，引入位置编码确保该操作对位置信息的敏感性。然后，基于GCC， 我们构建了一个纯卷积结构的meta-former结构。该结构舍弃了self attention 硬件支持不友好的操作， 
+ParC-Net 是一个纯卷积结构的轻量化骨干模型，它继承了卷积网络的优点，又融合了vision transformer 模型的长处。 具体来说，首先，我们提出了一个轻量化的操作，位置信息敏感的循环卷积（position aware circular convolution, ParC）。ParC中，我们以全局循环的形式提取全局特征，引入位置编码确保该操作对位置信息的敏感性。然后，基于ParC， 我们构建了一个纯卷积结构的meta-former结构。该结构舍弃了self attention 硬件支持不友好的操作， 
 但是保留了传统transformer block 提取全局特征的特点。最后，我们在纯卷积结构的meta-former中引入硬件支持较为友好的通道注意力机制在channel mixer 部分，使得我们的纯卷积meta-former结构也具备attention的特点。
-我们将最终得到的结构命名为EdgeFormer block， 这是一个即插即用的模块结构，可以插入到当前的现有的卷积模型和vision transformer 模型中去。
-实验结果表明，我们所提出的EdgeFormer在图像分类，目标检测及语义分割三个视觉任务上取得了比现有的轻量化卷积网络结构及vision transformer 模型更高的精度。拿在ImageNet-1k上的分类任务来说，我们的Edgefomer 仅使用约500万参数，取得了78.6 的分类精度。
+我们将最终得到的结构命名为ParC block， 这是一个即插即用的模块结构，可以插入到当前的现有的卷积模型和vision transformer 模型中去。
+实验结果表明，我们所提出的ParC-Net在图像分类，目标检测及语义分割三个视觉任务上取得了比现有的轻量化卷积网络结构及vision transformer 模型更高的精度。拿在ImageNet-1k上的分类任务来说，我们的ParC-Net 仅使用约500万参数，取得了78.6 的分类精度。
 跟苹果公司22年ICLR22 上提出的模型MobileVit 相比，节省了11% 参数，节省了13% 运算量，但是在RK3288 板子上，速度提升了23%， 并且精度高了0.2%。
 
-## EdgeFormer block
+## ParC block
 <p align="center">
-<img src="https://s1.ax1x.com/2022/03/16/qpaZwQ.png" width=60% height=60% 
+<img src="https://s1.ax1x.com/2022/07/27/vSRt7d.png" width=60% height=60% 
 class="center">
 </p>
 
-## 全局循环卷积
+## ParC
 
 <p align="center">
-<img src="https://s1.ax1x.com/2022/03/16/qpaeoj.png" width=60% height=60% 
+<img src="https://s1.ax1x.com/2022/07/27/vSRY0H.png" width=60% height=60% 
 class="center">
 </p>
 
 
 ## 实验结果
 
-### EdgeFormer-S
+### ParC-Net-S
 | Tasks | performance | #params | pretrained models |
 |:---:|:---:|:---:|:---:|
 | Classification | 78.6 (Top1 acc) | 5.0 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/classification/checkpoint_ema_avg.pt) |
@@ -48,26 +47,26 @@ class="center">
 | Segmentation   | 79.7 (mIOU)     | 5.8 | [model](https://github.com/hkzhang91/EdgeFormer/blob/main/pretrained_models/segmentation/checkpoint_ema_avg.pt) |
 
 ### 推理速度
-我们将EdgeFormer 和 基线模型MobileVit 部署到低算力的芯片板子RK3288及自研微功耗芯片上进行推理速度测试。 我们首先将pytorch 模型转换为ONNX 格式，然后将ONNX格式转换维MNN格式，最终部署到板子上测速。 为了保证结果的稳定，我们测速了一百次，并对比平均速度。
+我们将ParC-Net 和 基线模型MobileVit 部署到低算力的芯片板子RK3288及自研微功耗芯片上进行推理速度测试。 我们首先将pytorch 模型转换为ONNX 格式，然后将ONNX格式转换维MNN格式，最终部署到板子上测速。 为了保证结果的稳定，我们测速了一百次，并对比平均速度。
 
 | Models | #params (M) | Madds (M)| RK3288 inference speed (ms) |  自研微功耗芯片推理速度 (ms) | Top1 acc |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | MobileViT-S | 5.6 | 2010 |  457| 368   | 78.4 |
 | EdgeFormer-S | 5.0 (-11%)| 1740 (-13%) |  353 (+23%)| 98 (3.77x)|78.6 (+0.2%) |
 
-### 合并Edgeformer 和ConvNext
+### 合并ParC-Net 的设计思路 和ConvNext
 
 分类实验
 | Models | # params | Top1 acc |
 |:---:|:---:|:---:|
 | ConvNext-XT       | 7.44 (M) | 77.5 |
-| ConvNext-GCC-XT   | 7.41 (M) | 78.3 (+0.8)|
+| ParC-ConvNext-XT   | 7.41 (M) | 78.3 (+0.8)|
 
 检测实验
 | Models | # params | AP box  |  AP50 box  |  AP75 box  |  AP mask   |  AP50 mask  |  AP75 mask |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ConvNext-XT       | - | 47.2  |  65.6   |  51.4  |  41.0  |  63.0  |  44.2 |
-| ConvNext-GCC-XT   | - | 47.7  |  66.2   |  52.0  |  41.5  |  63.6  |  44.6 |
+| ParC-ConvNext-XT   | - | 47.7  |  66.2   |  52.0  |  41.5  |  63.6  |  44.6 |
 
 
 <p align="center">
@@ -75,7 +74,7 @@ class="center">
 class="center">
 </p>
 
-ConvNext 和 我们提出地EdgeFormer 都是纯卷积地结构。这两份工作是同时期独立研究的，方法中涉及的创新点是不同的，也是互补的。为了验证这一点，我们结合两者所长，构建了一个合并网络。具体来说，我们用几个Edgeformer 模块替换了ConvNext 后两个stage 里边的几个模块。 **这样一个替换，有效地提升了分类精度(提升0.8 个点)，同时还轻微地减少了参数量和运算量**。 我们分析，这个改进使得整个合并网络在浅层关注local信息，在深层关注global 信息，这一结构比一直使用local conv 更合理。对应的code 很快会更新。
+ConvNext 和 我们提出地ParC-Net 都是纯卷积地结构。这两份工作是同时期独立研究的，方法中涉及的创新点是不同的，也是互补的。为了验证这一点，我们结合两者所长，构建了一个合并网络。具体来说，我们用几个ParC 模块替换了ConvNext 后两个stage 里边的几个模块。 **这样一个替换，有效地提升了分类精度(提升0.8 个点)，同时还轻微地减少了参数量和运算量**。 我们分析，这个改进使得整个合并网络在浅层关注local信息，在深层关注global 信息，这一结构比一直使用local conv 更合理。对应的code 很快会更新。
 
 ## 安装
 我们的实验环境是Pytorch 1.9.0, CUDA-11.1. 实际上 PyTorch 1.8.0 都是可以work的， Pytorch 1.8.0 更早的版本我们没有测试过。
