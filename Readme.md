@@ -65,7 +65,7 @@ Classification experiments. CPU used here is Xeon E5-2680 v4. *Authors of EdgeVi
 |ParC-Net-S    | 5.0 M   | 1.7G   | RK3288 | 353 | 78.6 | Ours    |
 |MobileViT-S     | 5.6 M   | 2.0G   | DP | 368 | 78.4 | ICLR 22 |
 |ParC-Net-S    | 5.0 M   | 1.7G   | DP | 98  | 78.6 | Ours    |
-|ResNet50        | 26 M    | 2.1G   | CPU    | 98  | 78.8 | CVPR 16 |
+|ResNet50        | 26 M    | 2.1G   | CPU    | 98  | 79.1* | CVPR 22 new training setting |
 |ParC-ResNet50    | 24 M    | 2.0G   | CPU    | 98  | 79.6 | Ours    |
 |MobileNetV2     | 3.5 M   | 0.3G   | CPU    | 24  | 70.2 | CVPR 18 |
 |ParC-MobileNetV2 | 3.5 M   | 0.3G   | CPU    | 27  | 71.1 | Ours    |
@@ -80,6 +80,8 @@ Detection experiments
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ConvNext-XT       | - | 47.2  |  65.6   |  51.4  |  41.0  |  63.0  |  44.2 |
 | ParC-ConvNext-XT   | - | 47.7  |  66.2   |  52.0  |  41.5  |  63.6  |  44.6 |
+| ResNet-50          | - | 47.5  |         |        |  41.1  |        |       |
+| ParC-ResNet-50     | - | 48.1  |         |        |  41.8  |        |       |
 
 
 Segmentation experiments
@@ -88,6 +90,9 @@ Segmentation experiments
 |:---:|:---:|:---:|:---:|:---:|
 | ConvNext-XT       | - | 42.17  |  54.18   |  79.72  |
 | ParC-ConvNext-XT   | - | 42.32  |  54.48   |  80.30  |
+| ResNet-50          | - | 42.27  |          |  79.88  |
+| ParC-ResNet-50     | - | 43.85  |          |  80.43  |
+
 
 ConvNext block and ConvNext-GCC block
 <p align="center">
