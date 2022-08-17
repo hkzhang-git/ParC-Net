@@ -57,7 +57,7 @@ a in house unpublished low power neural network processor that highly optimizes 
 | ParC-Net-S | 5.0 (-11%)| 1740 (-13%) | 353 (+23%)| 98 (3.77x) | 78.6 (+0.2%) |
 
 ### Applying Edgeformer designs on various lightweight backbones
-Classification experiments. CPU used here is Xeon E5-2680 v4. *Authors of EdgeViT do not clarify the type of CPU used in their paper.
+Classification experiments. CPU used here is Xeon E5-2680 v4. *Authors of EdgeViT do not clarify the type of CPU used in their paper. ** We train ResNet50 with training strategy proposed in ConvNext. ResNet50 achieves 79.1 top 1 accuracy, which is much higher than 76.5 the accuracy reported in the original paper. 
 
 | Models         |# params |Madds   |Devices |Speed(ms) |Top1 acc| Source |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -65,14 +65,13 @@ Classification experiments. CPU used here is Xeon E5-2680 v4. *Authors of EdgeVi
 |ParC-Net-S    | 5.0 M   | 1.7G   | RK3288 | 353 | 78.6 | Ours    |
 |MobileViT-S     | 5.6 M   | 2.0G   | DP | 368 | 78.4 | ICLR 22 |
 |ParC-Net-S    | 5.0 M   | 1.7G   | DP | 98  | 78.6 | Ours    |
-|ResNet50        | 26 M    | 2.1G   | CPU    | 98  | 79.1* | CVPR 22 new training setting |
+|ResNet50        | 26 M    | 2.1G   | CPU    | 98  | 79.1** | CVPR 22 new training setting |
 |ParC-ResNet50    | 24 M    | 2.0G   | CPU    | 98  | 79.6 | Ours    |
 |MobileNetV2     | 3.5 M   | 0.3G   | CPU    | 24  | 70.2 | CVPR 18 |
 |ParC-MobileNetV2 | 3.5 M   | 0.3G   | CPU    | 27  | 71.1 | Ours    |
 |ConvNext-XT     | 7.4 M   | 0.6G   | CPU    | 47  | 77.5 | CVPR 22 |
 |ParC-ConvNext-XT | 7.4 M   | 0.6G   | CPU    | 48  | 78.3 | Ours    |
 |EdgeViT-XS      | 6.7 M   | 1.1G   | CPU*   | 54* | 77.5 | Arxiv 22/05 |
-|ParC-EdgeViT-XS  |         |        |        |     |      |         |
 
 
 Detection experiments
