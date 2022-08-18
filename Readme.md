@@ -91,6 +91,9 @@ Segmentation experiments
 | ParC-ConvNext-XT   | - | 42.32  |  54.48   |  80.30  |
 | ResNet-50          | - | 42.27  |          |  79.88  |
 | ParC-ResNet-50     | - | 43.85  |          |  80.43  |
+| MobileNetv2        | - | 32.80  |          |  74.42  |
+| ParC-MobileNetv2   | - | 35.13  |          |  75.73  |
+
 
 
 ConvNext block and ConvNext-GCC block
